@@ -11,6 +11,8 @@ import Foundation
 // ---------------------------------------------------------
 
 
+var isSunny : Bool = true
+print("the weather is sunny ? robot : \(isSunny)")
 
 
 
@@ -23,7 +25,12 @@ import Foundation
 // ---------------------------------------------------------
 
 
+var isLoggedIn: Bool = true
+var isAdmin: Bool = true
 
+if isAdmin && isLoggedIn {
+    print("AccesGranted")
+}
 
 
 
@@ -34,6 +41,14 @@ import Foundation
 // whether age is 18 or more. Print the result.
 // ---------------------------------------------------------
 
+
+var age = 22
+var isAdult: Bool
+
+if age > 18 {
+    isAdult = true
+    print(isAdult)
+}
 
 
 
@@ -48,6 +63,9 @@ import Foundation
 // ---------------------------------------------------------
 
 
+var username: String = "sharik"
+
+print("Welcome back,\(username)")
 
 
 
@@ -61,7 +79,13 @@ import Foundation
 // ---------------------------------------------------------
 
 
+var hasNotification = true
 
+if hasNotification {
+    print("You have new notification")
+} else {
+    print("No new notification")
+}
 
 
 
@@ -74,6 +98,9 @@ import Foundation
 // ---------------------------------------------------------
 
 
+
+var a : Int
+var b : Int
 
 
 
