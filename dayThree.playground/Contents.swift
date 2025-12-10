@@ -1,97 +1,99 @@
 import Cocoa
 
 // ================= Day 3 – Functions and Optionals =================
-// Imagine your program as a spaceship: functions are like engines.
-// Optionals are shields that may or may not be active.
 func greetUser(name: String?) {
-    // Your code here
     print("Hello, \(name ?? "guest")!")
 }
 
-// Test cases
-greetUser(name: "Sharik") // Should print: Hello, Sharik!
-greetUser(name: nil)      // Should print: Hello, guest!
+greetUser(name: "Sharik")
+greetUser(name: nil)
 
 // ================= Day 4 – Arrays and Loops =================
-// Picture a row of planets (an array). Loops are like satellites visiting each planet.
-// You can check a condition at each stop.
 let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-// Your code here, e.g., print even numbers
+// Example: print even numbers
+for number in numbers where number % 2 == 0 {
+    print(number)
+}
 
 // ================= Day 5 – Dictionaries =================
-// Think of a dictionary as a galaxy map: each planet (key) has its own resources (value).
-// You can explore only the planets with special resources.
 let studentScores = [
     "Alice": 90,
     "Bob": 75,
     "Charlie": 85,
     "Diana": 60
 ]
-// Your code here, e.g., print students with score > 80
+// Example: print students with score > 80
+for (name, score) in studentScores where score > 80 {
+    print("\(name) has a high score: \(score)")
+}
 
 // ================= Day 6 – Structs and MVVM =================
-// Structs are like blueprints for spaceships. Each ship has its parts (properties).
-// Functions let you launch or inspect your ship.
 struct Video {
-    // Your code here, e.g., title: String, duration: Int
+    var title: String
+    var duration: Int
 }
 
 func displayVideoInfo(video: Video) {
-    // Your code here, e.g., print title and duration
+    print("Title: \(video.title), Duration: \(video.duration) seconds")
 }
 
-// Test
 let myVideo = Video(title: "FocusFast Intro", duration: 120)
 displayVideoInfo(video: myVideo)
 
+/*
 // ================= Day 7 – Enums =================
-// Enums are categories of planets: desert, ocean, forest.
-// Each type can trigger a special event or rule.
 enum Category {
-    // Your code here, e.g., tutorial, music, vlog
+    case tutorial
+    case music
+    case vlog
 }
 
 func printCategoryMessage(category: Category) {
-    // Your code here, e.g., print a message based on category
+    switch category {
+    case .tutorial:
+        print("This is a tutorial video.")
+    case .music:
+        print("This is a music video.")
+    case .vlog:
+        print("This is a vlog.")
+    }
 }
 
-// Test
 printCategoryMessage(category: .tutorial)
 
 // ================= Day 8 – Closures =================
-// Closures are mini-robots that perform tasks wherever you send them.
-// You can give them inputs and they return outputs.
 let sumClosure: (Int, Int) -> Int = {
-    // Your code here, e.g., return $0 + $1
+    return $0 + $1
 }
 
-// Test
-let result = sumClosure(5, 7) // Should return 12
+let result = sumClosure(5, 7)
 print(result)
 
 // ================= Day 9 – Optionals and Guard =================
-// Optionals are mysterious boxes: some contain treasures, some are empty.
-// Guard statements let you exit early if the box is empty.
 func printUsername(_ username: String?) {
-    // Your code here, e.g., guard let unwrapped else print("No username")
+    guard let unwrapped = username else {
+        print("No username")
+        return
+    }
+    print("Username: \(unwrapped)")
 }
 
-// Test
 printUsername("Sharik")
 printUsername(nil)
 
 // ================= Day 10 – Protocols =================
-// Protocols are like universal rules of the cosmos: anything that follows them can interact the same way.
-// Structs conform to these rules to join the galactic network.
 protocol Playable {
-    // Your code here, e.g., func play()
+    func play()
 }
 
 struct Song: Playable {
     var title: String
-    // Your code here, e.g., implement play()
+
+    func play() {
+        print("Playing \(title)...")
+    }
 }
 
-// Test
 let mySong = Song(title: "Swift Beats")
 mySong.play()
+*/
